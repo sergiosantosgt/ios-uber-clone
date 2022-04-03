@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Uber-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Uber" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,16 +98,16 @@
                             <constraint firstItem="vNi-Bi-FhD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vMC-Zl-kpW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZQP-Q5-NSv"/>
+                    <navigationItem key="navigationItem" title="Uber" id="ZQP-Q5-NSv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="34.821428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="PD0-N9-znM">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Tkb-Fj-rVS" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Tkb-Fj-rVS" customClass="LoginViewController" customModule="Uber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dDH-Ol-WfX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ocm-fF-90z">
                                 <rect key="frame" x="20" y="219" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fJ-mj-fUB">
                                 <rect key="frame" x="142" y="273" width="130" height="55"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1726.0869565217392" y="-328.125"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="m1M-vG-fUA">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="scy-Ug-pHH" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="scy-Ug-pHH" customClass="RegisterViewController" customModule="Uber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ceo-mS-pZl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,12 +245,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-fP-wDC">
                                 <rect key="frame" x="20" y="299" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a confirmação de senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11m-qz-Lg9">
                                 <rect key="frame" x="20" y="379" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y19-fW-Uig">
                                 <rect key="frame" x="182.5" y="433" width="51" height="31"/>
@@ -266,6 +266,9 @@
                                 <state key="normal" title="Cadastra-se">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerUser:" destination="scy-Ug-pHH" eventType="touchUpInside" id="YPo-XZ-ipE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passageiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsG-Rj-r7K">
                                 <rect key="frame" x="248" y="438" width="84" height="21"/>
@@ -308,6 +311,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kVC-V8-z1I"/>
+                    <connections>
+                        <outlet property="completeName" destination="Hs0-eZ-Mp9" id="yEC-Wp-jHC"/>
+                        <outlet property="email" destination="2c5-hR-XOO" id="U32-KA-oBU"/>
+                        <outlet property="password" destination="MTO-fP-wDC" id="5Rl-kw-DRc"/>
+                        <outlet property="passwordConfirmation" destination="11m-qz-Lg9" id="gX2-le-oFT"/>
+                        <outlet property="userType" destination="Y19-fW-Uig" id="HLb-PE-7Ur"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBR-2n-HBE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
