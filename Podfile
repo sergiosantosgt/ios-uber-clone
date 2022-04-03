@@ -7,8 +7,9 @@ target 'Uber' do
 
   # Pods for Uber
   pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
   target 'UberTests' do
     inherit! :search_paths
